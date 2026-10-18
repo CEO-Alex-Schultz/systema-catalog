@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Политика обработки персональных данных — System MSK</title>
+<meta name="robots" content="noindex, follow">
+<style>
+  :root {
+    --accent: #4286f4;
+    --accent-2: #42e2f4;
+    --ink: #12151c;
+    --ink-soft: #4a4f5c;
+    --paper: #ffffff;
+    --paper-soft: #f5f7fb;
+    --line: rgba(18, 21, 28, 0.1);
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --shadow-card: 0 12px 32px rgba(18, 33, 64, 0.08);
+    --transition-base: 0.25s ease;
+    --container: 780px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper-soft);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); }
+
+  .l-container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ---------- Шапка ---------- */
+  .pp-header {
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+
+  .pp-header__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .pp-header__logo {
+    height: 28px;
+    display: block;
+  }
+
+  .pp-header__back {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink-soft);
+    transition: color var(--transition-base);
+  }
+
+  .pp-header__back:hover { color: var(--accent); }
+
+  /* ---------- Хиро ---------- */
+  .pp-hero {
+    padding: 56px 0 40px;
+    background: linear-gradient(135deg, rgba(66, 134, 244, 0.08), rgba(66, 226, 244, 0.08));
+    border-bottom: 1px solid var(--line);
+  }
+
+  .pp-hero__eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .pp-hero__title {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 800;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .pp-hero__meta {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  /* ---------- Карточка реквизитов ---------- */
+  .pp-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 24px 28px;
+    margin: -20px 0 40px;
+    position: relative;
+  }
+
+  .pp-card__title {
+    margin: 0 0 14px;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .pp-card dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 24px;
+  }
+
+  .pp-card dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    margin: 0 0 2px;
+  }
+
+  .pp-card dd {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 560px) {
+    .pp-card dl { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- TODO-плашка для владельца сайта ---------- */
+  .pp-todo {
+    border: 1px dashed #c98a1f;
+    background: #fff8e8;
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    margin-bottom: 40px;
+    font-size: 0.9rem;
+  }
+
+  .pp-todo__title {
+    margin: 0 0 8px;
+    font-weight: 700;
+    color: #8a5a0c;
+  }
+
+  .pp-todo ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .pp-todo li { margin-bottom: 4px; }
+
+  /* ---------- Оглавление ---------- */
+  .pp-toc {
+    margin-bottom: 48px;
+  }
+
+  .pp-toc__title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    margin: 0 0 12px;
+  }
+
+  .pp-toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    columns: 2;
+    column-gap: 24px;
+  }
+
+  .pp-toc li { break-inside: avoid; margin-bottom: 8px; }
+
+  .pp-toc a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+
+  .pp-toc a:hover { color: var(--accent); }
+
+  @media (max-width: 560px) {
+    .pp-toc ol { columns: 1; }
+  }
+
+  /* ---------- Секции документа ---------- */
+  .pp-body {
+    padding-bottom: 80px;
+  }
+
+  .pp-section {
+    position: relative;
+    padding: 0 0 36px 52px;
+    margin-bottom: 4px;
+    border-left: 2px solid var(--line);
+  }
+
+  .pp-section:last-child {
+    border-left: 2px solid transparent;
+    padding-bottom: 0;
+  }
+
+  .pp-section__num {
+    position: absolute;
+    left: -19px;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .pp-section__title {
+    margin: 4px 0 12px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    scroll-margin-top: 20px;
+  }
+
+  .pp-section p {
+    margin: 0 0 12px;
+    color: var(--ink-soft);
+  }
+
+  .pp-section ul {
+    margin: 0 0 12px;
+    padding-left: 20px;
+    color: var(--ink-soft);
+  }
+
+  .pp-section li { margin-bottom: 6px; }
+
+  .pp-section strong { color: var(--ink); }
+
+  @media (max-width: 560px) {
+    .pp-section { padding-left: 40px; }
+    .pp-section__num { width: 28px; height: 28px; left: -15px; font-size: 0.8rem; }
+  }
+
+  /* ---------- Подвал ---------- */
+  .pp-footer {
+    border-top: 1px solid var(--line);
+    padding: 24px 0;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .pp-footer a { color: var(--ink-soft); text-decoration: underline; }
+</style>
+</head>
+<body>
+
+  <header class="pp-header">
+    <div class="pp-header__row">
+      <img class="pp-header__logo" src="images/logo.png" alt="System MSK">
+      <a class="pp-header__back" href="index.html">← На главную</a>
+    </div>
+  </header>
+
+  <section class="pp-hero">
+    <div class="l-container">
+      <span class="pp-hero__eyebrow">Документ · 152-ФЗ</span>
+      <h1 class="pp-hero__title">Политика обработки персональных данных</h1>
+      <p class="pp-hero__meta">Действует с 18 июля 2026 года · применяется ко всем формам на сайте systemamsk.ru</p>
+    </div>
+  </section>
+
+  <div class="l-container pp-body">
+
+    <div class="pp-card">
+      <p class="pp-card__title">Оператор персональных данных</p>
+      <dl>
+        <div>
+          <dt>Наименование</dt>
+          <dd>ООО "Система МСК"</dd>
+        </div>
+        <div>
+          <dt>ИНН</dt>
+          <dd>9719017391</dd>
+        </div>
+        <div>
+          <dt>КПП</dt>
+          <dd>771901001</dd>
+        </div>
+        <div>
+          <dt>ОГРН</dt>
+          <dd>1217700348051</dd>
+        </div>
+        <div>
+          <dt>Юридический адрес</dt>
+          <dd>105187, г. Москва, вн. тер.г. муниципальный округ Соколиная гора, Окружной пр-д, д. 16, этаж 1, помещ. xv/комн/29а/оф 2</dd>
+        </div>
+        <div>
+          <dt>E-mail для обращений</dt>
+          <dd><a href="mailto:office@systemamsk.ru">office@systemamsk.ru</a></dd>
+        </div>
+        <div>
+          <dt>Телефон</dt>
+          <dd><a href="tel:84959883508">+7 (495) 988 35 08</a></dd>
+        </div>
+      </dl>
+    </div>
+
+
+
+    <nav class="pp-toc" aria-label="Оглавление">
+      <p class="pp-toc__title">Оглавление</p>
+      <ol>
+        <li><a href="#general">1. Общие положения</a></li>
+        <li><a href="#terms">2. Термины и определения</a></li>
+        <li><a href="#data">3. Состав обрабатываемых данных</a></li>
+        <li><a href="#purpose">4. Цели обработки</a></li>
+        <li><a href="#basis">5. Правовые основания</a></li>
+        <li><a href="#actions">6. Действия с данными</a></li>
+        <li><a href="#transfer">7. Передача третьим лицам</a></li>
+        <li><a href="#storage">8. Место хранения и трансграничная передача</a></li>
+        <li><a href="#period">9. Сроки обработки и хранения</a></li>
+        <li><a href="#rights">10. Права субъекта данных</a></li>
+        <li><a href="#revoke">11. Отзыв согласия</a></li>
+        <li><a href="#security">12. Меры защиты</a></li>
+        <li><a href="#final">13. Заключительные положения</a></li>
+      </ol>
+    </nav>
+
+    <div class="pp-sections">
+
+      <section class="pp-section" id="general">
+        <span class="pp-section__num" aria-hidden="true">1</span>
+        <h2 class="pp-section__title">Общие положения</h2>
+        <p>Настоящая Политика обработки персональных данных (далее — «Политика») разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных пользователей сайта systemamsk.ru (далее — «Сайт») со стороны System MSK (далее — «Оператор»).</p>
+        <p>Политика применяется ко всем персональным данным, которые Оператор получает от пользователя через формы обратной связи, размещённые на Сайте.</p>
+      </section>
+
+      <section class="pp-section" id="terms">
+        <span class="pp-section__num" aria-hidden="true">2</span>
+        <h2 class="pp-section__title">Термины и определения</h2>
+        <ul>
+          <li><strong>Персональные данные</strong> — любая информация, относящаяся прямо или косвенно к определённому или определяемому физическому лицу (субъекту персональных данных).</li>
+          <li><strong>Обработка персональных данных</strong> — любое действие или совокупность действий с персональными данными, совершаемых с использованием средств автоматизации или без них.</li>
+          <li><strong>Субъект персональных данных</strong> — пользователь Сайта, заполнивший форму обратной связи и предоставивший свои персональные данные.</li>
+          <li><strong>Согласие субъекта персональных данных</strong> — добровольное, конкретное, информированное и однозначное выражение воли, посредством которого субъект разрешает обработку своих персональных данных.</li>
+        </ul>
+      </section>
+
+      <section class="pp-section" id="data">
+        <span class="pp-section__num" aria-hidden="true">3</span>
+        <h2 class="pp-section__title">Состав обрабатываемых персональных данных</h2>
+        <p>При заполнении формы обратной связи Оператор обрабатывает следующие данные:</p>
+        <ul>
+          <li>имя;</li>
+          <li>адрес электронной почты;</li>
+          <li>номер телефона;</li>
+          <li>наименование организации (если указано);</li>
+          <li>текст обращения;</li>
+          <li>прикреплённый файл (если пользователь его загрузил).</li>
+        </ul>
+        <p>Дополнительно в техническом режиме могут фиксироваться IP-адрес, тип браузера и файлы cookie, необходимые для корректной работы Сайта.</p>
+      </section>
+
+      <section class="pp-section" id="purpose">
+        <span class="pp-section__num" aria-hidden="true">4</span>
+        <h2 class="pp-section__title">Цели обработки персональных данных</h2>
+        <ul>
+          <li>обработка и рассмотрение заявки, поступившей через форму обратной связи;</li>
+          <li>обратная связь с пользователем, включая подготовку ответа и коммерческого предложения;</li>
+          <li>заключение и исполнение договора при переходе к сотрудничеству.</li>
+        </ul>
+      </section>
+
+      <section class="pp-section" id="basis">
+        <span class="pp-section__num" aria-hidden="true">5</span>
+        <h2 class="pp-section__title">Правовые основания обработки</h2>
+        <p>Правовым основанием обработки является согласие субъекта персональных данных (п. 1 ч. 1 ст. 6 152-ФЗ), полученное посредством проставления отметки в форме обратной связи на Сайте, а также настоящая Политика.</p>
+      </section>
+
+      <section class="pp-section" id="actions">
+        <span class="pp-section__num" aria-hidden="true">6</span>
+        <h2 class="pp-section__title">Действия, совершаемые с персональными данными</h2>
+        <p>Оператор осуществляет сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (в объёме, необходимом для целей п. 4), обезличивание, блокирование, удаление и уничтожение персональных данных.</p>
+      </section>
+
+      <section class="pp-section" id="transfer">
+        <span class="pp-section__num" aria-hidden="true">7</span>
+        <h2 class="pp-section__title">Передача третьим лицам</h2>
+        <p>Оператор не передаёт персональные данные третьим лицам, за исключением случаев, необходимых для функционирования Сайта и обработки заявки (например, хостинг-провайдер, сервис электронной почты), а также случаев, прямо предусмотренных законодательством РФ.</p>
+      </section>
+
+      <section class="pp-section" id="storage">
+        <span class="pp-section__num" aria-hidden="true">8</span>
+        <h2 class="pp-section__title">Место хранения и трансграничная передача</h2>
+        <p>Обработка и хранение персональных данных граждан РФ осуществляется на серверах, расположенных на территории Российской Федерации, в соответствии со ст. 18 152-ФЗ. Трансграничная передача персональных данных не осуществляется.</p>
+      </section>
+
+      <section class="pp-section" id="period">
+        <span class="pp-section__num" aria-hidden="true">9</span>
+        <h2 class="pp-section__title">Сроки обработки и хранения</h2>
+        <p>Персональные данные обрабатываются до достижения целей обработки, указанных в разделе 4, либо до отзыва согласия субъектом персональных данных, если иной срок не установлен законодательством РФ.</p>
+      </section>
+
+      <section class="pp-section" id="rights">
+        <span class="pp-section__num" aria-hidden="true">10</span>
+        <h2 class="pp-section__title">Права субъекта персональных данных</h2>
+        <p>Субъект персональных данных вправе:</p>
+        <ul>
+          <li>получать информацию, касающуюся обработки его персональных данных;</li>
+          <li>требовать уточнения, блокирования или уничтожения данных в случае их неточности, незаконного получения или обработки;</li>
+          <li>отозвать согласие на обработку персональных данных;</li>
+          <li>обжаловать действия или бездействие Оператора в Роскомнадзоре или в судебном порядке.</li>
+        </ul>
+      </section>
+
+      <section class="pp-section" id="revoke">
+        <span class="pp-section__num" aria-hidden="true">11</span>
+        <h2 class="pp-section__title">Порядок отзыва согласия</h2>
+        <p>Для отзыва согласия субъект направляет письменное заявление на адрес электронной почты Оператора, указанный в разделе «Оператор персональных данных». Обработка персональных данных прекращается, а данные подлежат уничтожению в срок, установленный ст. 6, 9 152-ФЗ, за исключением случаев, когда обработка предусмотрена иным законным основанием.</p>
+      </section>
+
+      <section class="pp-section" id="security">
+        <span class="pp-section__num" aria-hidden="true">12</span>
+        <h2 class="pp-section__title">Меры по обеспечению безопасности</h2>
+        <p>Оператор принимает необходимые организационные и технические меры для защиты персональных данных от неправомерного или случайного доступа, уничтожения, изменения, блокирования, копирования, распространения, а также от иных неправомерных действий третьих лиц, в соответствии со ст. 19 152-ФЗ.</p>
+      </section>
+
+      <section class="pp-section" id="final">
+        <span class="pp-section__num" aria-hidden="true">13</span>
+        <h2 class="pp-section__title">Заключительные положения</h2>
+        <p>Оператор вправе вносить изменения в настоящую Политику. Новая редакция вступает в силу с момента публикации на Сайте, если иное не предусмотрено новой редакцией. Актуальная версия Политики всегда доступна по адресу <code>/privacy-policy.html</code>.</p>
+      </section>
+
+    </div>
+
+  </div>
+
+  <footer class="pp-footer">
+    <div class="l-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; width: 100%;">
+      <span>© 2026 Система МСК</span>
+      <a href="index.html#contact">Форма обратной связи</a>
+    </div>
+  </footer>
+
+</body>
+</html>
