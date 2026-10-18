@@ -531,10 +531,9 @@
           /* Без unobserve: класс снимается, когда элемент покидает зону, и
              добавляется снова при возврате — повторяется как в AOS
              (once: false в оригинале). */
-          if (entry.isIntersecting) {
+            if (entry.isIntersecting) {
             entry.target.classList.add('reveal--in');
-          } else {
-            entry.target.classList.remove('reveal--in');
+            observer.unobserve(entry.target);
           }
         });
       },
